@@ -9,10 +9,7 @@ import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.sql.Timestamp;
 
@@ -33,6 +30,17 @@ public class AccountController {
 
     }
 
+    @CrossOrigin
+    @GetMapping("/customer")
+    public ResponseEntity<?> findAll() {
+        return new ResponseEntity<>(accountService.findAll(), HttpStatus.OK);
+    }
+
+    @CrossOrigin
+    @GetMapping ("/customer/{id}")
+    public ResponseEntity<?> findAccount(@PathVariable String id) {
+        return new ResponseEntity<>(accountService.findAccount(id), HttpStatus.OK);
+    }
 
 
 }
