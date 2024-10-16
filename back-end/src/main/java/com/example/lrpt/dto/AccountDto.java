@@ -12,4 +12,3 @@ public class AccountDto {
     private String phoneNumber;
 
 }
-

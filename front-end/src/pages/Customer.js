@@ -1,11 +1,11 @@
 import React from 'react';
-
+ 
 function Customer() {
-    return (
-        <div>
-            Customer page
-        </div>
-    );
+  return (
+    <div>
+       Customer page
+    </div>
+  );
 }
 
 
