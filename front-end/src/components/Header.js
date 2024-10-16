@@ -1,6 +1,6 @@
 import React from 'react';
-import {Card, Nav, Navbar} from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import {Nav, Navbar} from 'react-bootstrap';
+//import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 
 
