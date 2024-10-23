@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b550dc4b-c27b-45f3-8fd6-d591bf66fe35" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../back-end/data/db.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/data/db.mv.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../back-end/src/main/java/com/example/lrpt/controller/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/src/main/java/com/example/lrpt/controller/AccountController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../back-end/src/main/java/com/example/lrpt/service/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/src/main/java/com/example/lrpt/service/AccountService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -93,6 +91,8 @@
       <workItem from="1729102344764" duration="114000" />
       <workItem from="1729102463746" duration="123000" />
       <workItem from="1729103488891" duration="407000" />
+      <workItem from="1729703164921" duration="727000" />
+      <workItem from="1729719520564" duration="1080000" />
     </task>
     <task id="LOCAL-00001" summary="2">
       <option name="closed" value="true" />
