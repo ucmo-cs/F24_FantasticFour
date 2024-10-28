@@ -22,12 +22,14 @@ public class Account {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long account_id;
 
-    private int user_type;
+    private Boolean user_type;
     private String userId;
     private String userName;
     private String password;
     private String email;
     private String phoneNumber;
+    private String bankAccount;
+    private String bankRouting;
 
     private Timestamp created_at;
 
