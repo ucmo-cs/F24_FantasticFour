@@ -31,14 +31,14 @@ public class AccountController {
     }
 
     @CrossOrigin
-    @GetMapping("/customer")
+    @GetMapping("/account")
     public ResponseEntity<?> findAll() {
         return new ResponseEntity<>(accountService.findAll(), HttpStatus.OK);
     }
 
     @CrossOrigin
-    @GetMapping ("/customer/{id}")
-    public ResponseEntity<?> findAccount(@PathVariable String id) {
+    @GetMapping ("/account/{id}")
+    public ResponseEntity<?> findAccount(@PathVariable long id) {
         return new ResponseEntity<>(accountService.findAccount(id), HttpStatus.OK);
     }
 

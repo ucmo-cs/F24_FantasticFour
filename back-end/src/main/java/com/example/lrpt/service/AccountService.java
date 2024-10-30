@@ -23,8 +23,8 @@ public class AccountService {
     }
 
     @Transactional(readOnly = true)
-    public Account findAccount(String id) {
-        return accountRepository.findByUserId(id).orElseThrow(()-> new IllegalArgumentException("Check Id"));
+    public Account findAccount(long accountId) {
+        return accountRepository.findByAccountId(accountId).orElseThrow(()-> new IllegalArgumentException("Check Id"));
     }
 
     @Transactional(readOnly = true)

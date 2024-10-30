@@ -5,11 +5,12 @@ import lombok.Data;
 @Data
 public class AccountDto {
 
-    private Boolean user_type;
-    private String userId;
-    private String userName;
-    private String password;
-    private String email;
+//    private Boolean user_type;
+//    private String userId;
+//    private String userName;
+//    private String password;
+//  private String email;
+    private long accountId;
     private String phoneNumber;
     private String bankAccount;
     private String bankRouting;

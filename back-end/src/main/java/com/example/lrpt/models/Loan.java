@@ -26,7 +26,7 @@ public class Loan {
     private Timestamp created_at;
 
     @ManyToOne
-    @JoinColumn(name = "account_id")
+    @JoinColumn(name = "accountId")
     private Account user_account;
 
 }
