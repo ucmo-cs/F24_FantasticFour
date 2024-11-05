@@ -27,12 +27,12 @@ public class LoanController {
         Loan loan = new ModelMapper().map(loanDto, Loan.class);
         loan.setCreated_at(new Timestamp(System.currentTimeMillis()));
 
-        String userId = "testId";
-        //accountId
+        //String userId = "testId";
+        long accountId = 1;
         //userId
         //userName
 
-        return new ResponseEntity<>(loanService.create(loan, userId), HttpStatus.CREATED);
+        return new ResponseEntity<>(loanService.create(loan, accountId), HttpStatus.CREATED);
 
     }
 

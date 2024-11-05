@@ -20,22 +20,19 @@ public class Account {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long account_id;
+    private long accountId;
 
-    private Boolean user_type;
-    private String userId;
-    private String userName;
-    private String password;
-    private String email;
-    private String phoneNumber;
+
     private String bankAccount;
     private String bankRouting;
-
     private Timestamp created_at;
 
     @OneToMany(mappedBy = "user_account")
     @JsonIgnore
     private List<Loan>  loans = new ArrayList<>();
 
+    @OneToMany(mappedBy = "customer_account")
+    @JsonIgnore
+    private List<Customer> customers = new ArrayList<>();
 
 }
