@@ -4,6 +4,7 @@ import AdminDash from './Pages/AdminDash';
 import LoanCreator from './Pages/LoanCreator'
 import Login from './Pages/Login'
 import SpecificLoan from './Pages/SpecificLoan';
+import Customer from "./Pages/Customer";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Route path="/admindash" exact={true} element={<AdminDash/>}/>
       <Route path="/loancreator" exact={true} element={<LoanCreator/>}/>
       <Route path="/loan/:loanid" element={<SpecificLoan/>}/>
+      <Route path="/customer" element={<Customer/>}/>
     </Routes>
   </div>
   );
