@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import Header from '../Components/Header';
+import Header from '../components/Header';
 
 
 function LoanCreator(props) {

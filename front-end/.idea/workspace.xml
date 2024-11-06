@@ -4,15 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b550dc4b-c27b-45f3-8fd6-d591bf66fe35" name="Changes" comment="">
+    <list default="true" id="b550dc4b-c27b-45f3-8fd6-d591bf66fe35" name="Changes" comment="test">
       <change beforePath="$PROJECT_DIR$/../back-end/data/db.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/data/db.mv.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Customer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Customer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/AdminDash.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/AdminDash.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/LoanCreator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/LoanCreator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/SpecificLoan.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/SpecificLoan.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -53,7 +63,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "#1 on Bella",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/stevenshackelford/Desktop/gittest/front-end",
     "node.js.detected.package.eslint": "true",
@@ -127,7 +137,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729102555334</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="test">
+      <option name="closed" value="true" />
+      <created>1730907598806</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1730907598806</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -141,6 +159,18 @@
     <MESSAGE value="2" />
     <MESSAGE value="3" />
     <MESSAGE value="sync" />
-    <option name="LAST_COMMIT_MESSAGE" value="sync" />
+    <MESSAGE value="test" />
+    <option name="LAST_COMMIT_MESSAGE" value="test" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/App.js</url>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

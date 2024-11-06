@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Table, Row, Col } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import Header from '../Components/Header';
+import Header from '../components/Header';
 import '../App.css';
  
 function AdminDash() {
