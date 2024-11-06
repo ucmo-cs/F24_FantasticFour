@@ -20,9 +20,9 @@ public class LoanService {
     private final AccountRepository accountRepository;
 
     @Transactional
-    public Loan create(Loan loan, String userId){
+    public Loan create(Loan loan, long id){
 
-        Account account = accountRepository.findByUserId(userId).orElse(null);
+        Account account = accountRepository.findByAccountId(id).orElse(null);
 
         if(account!=null){
             loan.setUser_account(account);
@@ -33,5 +33,8 @@ public class LoanService {
     }
     @Transactional(readOnly = true)
     public List<Loan> findAll() { return loanRepository.findAll(); }
+
+    @Transactional
+    public Loan findById(long id) { return loanRepository.findById(id).orElse(null); }
 
 }
