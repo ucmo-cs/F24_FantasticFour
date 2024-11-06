@@ -1,6 +1,23 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
+import {Table} from "react-bootstrap";
+import {useNavigate} from "react-router-dom";
+
+
  
 function Customer() {
+
+    const [loans, setLoans] = useState([]);
+
+    useEffect(()=>{
+        fetch("http://localhost:8080/loans", {method:"GET"})
+            .then(res => res.json())
+            .then(res=> {setLoans(res);})
+    },[])
+
+    const navigate = useNavigate();
+    
+    
+    
   return (
     <div>
        Customer page
@@ -16,10 +33,10 @@ function Customer() {
             </tr>
           </thead>
           <tbody>
-            {Account.map(Account =>
+            
               {loans.map(loan => 
                 <tr>
-                  <td>{Acount.userName}</td>
+                  <td>{loan.user_account.userName}</td>
                   <td>amount due</td>
                   <td>{loan.loan_origin_amount}</td>
                   <td>{loan.created_at}</td>
@@ -27,7 +44,7 @@ function Customer() {
                   <td>date paid in full</td>
                 </tr>
               )}
-            )}
+            
           </tbody>
         </Table>
        personal info:
@@ -43,13 +60,13 @@ function Customer() {
             </tr>
           </thead>
           <tbody>
-            {Account.map(Account =>
+            {loans.map(loan =>
               <tr>
-                <td>{Acount.userName}</td>
-                <td>{Account.email}l</td>
-                <td>{Account.phoneNumber}</td>
-                <td>{Account.bankAcount}</td>
-                <td>{Account.bankRouting}</td>
+                <td>{loan.user_account.userName}</td>
+                <td>{loan.user_account.email}</td>
+                <td>{loan.user_account.phoneNumber}</td>
+                <td>{loan.user_account.bankAccount}</td>
+                <td>{loan.user_account.bankRouting}</td>
               </tr>
             )}
           </tbody>
