@@ -42,4 +42,11 @@ public class LoanController {
         return new ResponseEntity<>(loanService.findAll(), HttpStatus.OK);
     }
 
+    @CrossOrigin
+    @GetMapping("/loan/{id}")
+    public ResponseEntity<?> findById(@PathVariable long id) {
+        return new ResponseEntity<>(loanService.findById(id), HttpStatus.OK);
+    }
+
+
 }

@@ -34,4 +34,7 @@ public class LoanService {
     @Transactional(readOnly = true)
     public List<Loan> findAll() { return loanRepository.findAll(); }
 
+    @Transactional
+    public Loan findById(long id) { return loanRepository.findById(id).orElse(null); }
+
 }
