@@ -21,8 +21,8 @@ function AdminDash() {
     navigate("/loancreator");  
   };
 
-  const moveToSpecificLoan = () => {
-    navigate("/specificloan")
+  const moveToSpecificLoan = (loan_id) => () =>{
+    navigate(`/loan/${loan_id}`)
   };
 
   const formatDate = (timestamp) => {
@@ -64,7 +64,7 @@ function AdminDash() {
               <tbody>
               {loans.map(loan =>
                   <tr>
-                  <td><Button variant='link' onClick={moveToSpecificLoan}>{loan.user_account.userId}-{loan.loan_id}</Button></td>
+                  <td><Button variant='link' onClick={moveToSpecificLoan(loan.loan_id)}>{loan.user_account.userId}-{loan.loan_id}</Button></td>
                   <td>{formatMoney(loan.loan_origin_amount)}</td>
                   <td>{loan.interest_rate}%</td>
                   <td>{formatDate(loan.created_at)}, {formatTime(loan.created_at)}</td>
