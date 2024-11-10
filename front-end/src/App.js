@@ -1,10 +1,10 @@
 import './App.css';
 import { Route, Router, Routes } from 'react-router-dom';
-import AdminDash from './Pages/AdminDash';
-import LoanCreator from './Pages/LoanCreator'
-import Login from './Pages/Login'
-import SpecificLoan from './Pages/SpecificLoan';
-import Customer from "./Pages/Customer";
+import AdminDash from './pages/AdminDash';
+import LoanCreator from './pages/LoanCreator'
+import Login from './pages/Login'
+import SpecificLoan from './pages/SpecificLoan';
+import Customer from "./pages/Customer";
 
 function App() {
   return (

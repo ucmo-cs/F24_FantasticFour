@@ -1,6 +1,5 @@
 package com.example.lrpt.service;
 import com.example.lrpt.models.Account;
-import com.example.lrpt.models.Loan;
 import com.example.lrpt.repository.AccountRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -29,5 +28,21 @@ public class AccountService {
 
     @Transactional(readOnly = true)
     public List<Account> findAll() { return accountRepository.findAll(); }
+
+
+    public Account validateUser(String userName, String password) {
+
+        Account account1 = accountRepository.findByuserName(userName)
+                .orElseThrow(()-> new IllegalArgumentException("Check Id"));
+        if (account1.getPassword().equals(password)) {
+            return account1;
+        }
+        return account1;
+
+    }
+
+
+
+
 }
 

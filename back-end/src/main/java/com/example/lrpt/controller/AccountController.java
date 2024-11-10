@@ -5,7 +5,7 @@ import com.example.lrpt.models.Account;
 import com.example.lrpt.dto.AccountDto;
 import com.example.lrpt.service.AccountService;
 import lombok.AllArgsConstructor;
-//import org.modelmapper.ModelMapper;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -31,6 +31,18 @@ public class AccountController {
     }
 
     @CrossOrigin
+    @PostMapping("/login")
+    public ResponseEntity<AccountDto> login(@RequestBody AccountDto loginRequest) {
+
+        Account account = accountService.validateUser(loginRequest.getUserName(), loginRequest.getPassword());
+
+        AccountDto accountDto = new ModelMapper().map(account, AccountDto.class);
+
+        return ResponseEntity.ok(accountDto);
+    }
+
+
+    @CrossOrigin
     @GetMapping("/account")
     public ResponseEntity<?> findAll() {
         return new ResponseEntity<>(accountService.findAll(), HttpStatus.OK);
@@ -39,6 +51,7 @@ public class AccountController {
     @CrossOrigin
     @GetMapping ("/account/{id}")
     public ResponseEntity<?> findAccount(@PathVariable long id) {
+
         return new ResponseEntity<>(accountService.findAccount(id), HttpStatus.OK);
     }
 

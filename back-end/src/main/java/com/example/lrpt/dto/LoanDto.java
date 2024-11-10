@@ -5,8 +5,9 @@ import lombok.Data;
 @Data
 public class LoanDto {
 
-    private String loan_origin_amount;
-    private String interest_rate;
-    private String automaticPayment;
+    private double loan_origin_amount;
+    private double amountOwed;
+    private double interest_rate;
+    private double automaticPayment;
 
 }
