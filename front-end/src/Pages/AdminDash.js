@@ -64,11 +64,11 @@ function AdminDash() {
               <tbody>
               {loans.map(loan =>
                   <tr>
-                  <td><Button variant='link' onClick={moveToSpecificLoan(loan.loan_id)}>{loan.user_account.userId}-{loan.loan_id}</Button></td>
+                  <td><Button variant='link' onClick={moveToSpecificLoan(loan.loanid)}>{loan.useraccount.userId}-{loan.loanid}</Button></td>
                   <td>{formatMoney(loan.loan_origin_amount)}</td>
                   <td>{loan.interest_rate}%</td>
                   <td>{formatDate(loan.created_at)}, {formatTime(loan.created_at)}</td>
-                  <td>{loan.user_account.userName}</td>
+                  <td>{loan.useraccount.userName}</td>
                   </tr>
               )}    
               </tbody>
