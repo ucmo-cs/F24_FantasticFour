@@ -18,7 +18,7 @@ public class Loan {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long loan_id;
+    private long loanid;
 
     private double loan_origin_amount;
     private double amountOwed;
@@ -28,8 +28,8 @@ public class Loan {
     private Timestamp created_at;
 
     @ManyToOne
-    @JoinColumn(name = "accountId")
-    private Account user_account;
+    @JoinColumn(name = "userId")
+    private Account useraccount;
 
 }
 

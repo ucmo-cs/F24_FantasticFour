@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.Optional;
 
 @AllArgsConstructor
 @Service
@@ -20,21 +19,27 @@ public class LoanService {
     private final AccountRepository accountRepository;
 
     @Transactional
-    public Loan create(Loan loan, long id){
-
-        Account account = accountRepository.findByAccountId(id).orElse(null);
-
-        if(account!=null){
-            loan.setUser_account(account);
-        }
-
+    public Loan create(Loan loan, Long id) {
+        Account account = accountRepository.findById(id)
+            .orElseThrow(() -> new RuntimeException("Account not found: " + id));
+        loan.setUseraccount(account);
         return loanRepository.save(loan);
-
     }
+
     @Transactional(readOnly = true)
-    public List<Loan> findAll() { return loanRepository.findAll(); }
+    public List<Loan> findAll() { 
+        return loanRepository.findAll(); 
+    }
 
-    @Transactional
-    public Loan findById(long id) { return loanRepository.findById(id).orElse(null); }
+    @Transactional(readOnly = true)
+    public Loan findByloanid(long loanid) {
+        return loanRepository.findById(loanid)
+            .orElseThrow(() -> new RuntimeException("Loan not found: " + loanid));
+    }
 
+    @Transactional(readOnly = true)
+    public Loan findByUserId(Long userId) {
+        return loanRepository.findByloanid(userId)
+            .orElseThrow(() -> new RuntimeException("Loan not found for user: " + userId));
+    }
 }

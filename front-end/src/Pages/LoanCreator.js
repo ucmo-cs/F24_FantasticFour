@@ -14,8 +14,6 @@ function LoanCreator() {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
-  const [bankAccount, setBankAccount] = useState('');
-  const [bankRouting, setBankRouting] = useState('');
 
   // Loan details
   const [loanAmount, setLoanAmount] = useState('');
@@ -43,16 +41,14 @@ function LoanCreator() {
         password: "password",
         email: email,
         phoneNumber: phoneNumber,
-        bankAccount: bankAccount,
-        bankRouting: bankRouting,
         user_type: false
       })
     });
-
+  
     if (!response.ok) {
       throw new Error('Failed to create account');
     }
-
+  
     return await response.json();
   };
 
@@ -68,7 +64,7 @@ function LoanCreator() {
         const newAccount = await createAccount();
         accountId = newAccount.userId;
       } else {
-        accountId = selectedAccount;
+        accountId = parseInt(selectedAccount, 10);
       }
 
       // Create loan with account ID
@@ -79,8 +75,10 @@ function LoanCreator() {
         },
         body: JSON.stringify({
           user_account: { userId: accountId },
-          loan_origin_amount: loanAmount,
-          interest_rate: interestRate,
+          loan_origin_amount: parseFloat(loanAmount),
+          interest_rate: parseFloat(interestRate),
+          amountOwed: parseFloat(loanAmount),
+          automaticPayment: 0.0,
           created_at: new Date().toISOString()
         })
       });

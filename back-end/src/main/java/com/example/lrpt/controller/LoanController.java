@@ -4,15 +4,13 @@ import com.example.lrpt.dto.LoanDto;
 import com.example.lrpt.models.Loan;
 import com.example.lrpt.service.LoanService;
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-import org.apache.coyote.Response;
 import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.Timestamp;
+import java.util.Calendar;
 
 @AllArgsConstructor
 @RestController
@@ -21,19 +19,29 @@ public class LoanController {
     private final LoanService loanService;
 
     @CrossOrigin
-    @PostMapping("/loan")
+    @PostMapping("/loans")
     public ResponseEntity<?> save(@RequestBody LoanDto loanDto) {
-
-        Loan loan = new ModelMapper().map(loanDto, Loan.class);
-        loan.setCreated_at(new Timestamp(System.currentTimeMillis()));
-
-        //String userId = "testId";
-        long accountId = 1;
-        //userId
-        //userName
-
-        return new ResponseEntity<>(loanService.create(loan, accountId), HttpStatus.CREATED);
-
+        try {
+            Loan loan = new ModelMapper().map(loanDto, Loan.class);
+            
+            // Set initial values
+            loan.setCreated_at(new Timestamp(System.currentTimeMillis()));
+            loan.setAmountOwed(loan.getLoan_origin_amount()); // Initially, amount due equals loan amount
+            
+            // Get account ID from the nested user_account object
+            long accountId = loanDto.getUser_account().getUserId();
+            
+            // Calculate payoff date if needed (example: 12 months from now)
+            Calendar calendar = Calendar.getInstance();
+            calendar.add(Calendar.YEAR, 1); // Add 1 year
+            //loan.setPayoff_date(new Timestamp(calendar.getTimeInMillis()));
+            
+            return new ResponseEntity<>(loanService.create(loan, accountId), HttpStatus.CREATED);
+        } catch (Exception e) {
+            e.printStackTrace(); // Add this for debugging
+            return new ResponseEntity<>("Failed to create loan: " + e.getMessage(), 
+                                     HttpStatus.BAD_REQUEST);
+        }
     }
 
     @CrossOrigin
@@ -45,8 +53,17 @@ public class LoanController {
     @CrossOrigin
     @GetMapping("/loan/{id}")
     public ResponseEntity<?> findById(@PathVariable long id) {
-        return new ResponseEntity<>(loanService.findById(id), HttpStatus.OK);
+        return new ResponseEntity<>(loanService.findByloanid(id), HttpStatus.OK);
     }
 
-
+    @CrossOrigin
+    @GetMapping("/loans/user/{userId}")
+    public ResponseEntity<?> findByUserId(@PathVariable Long userId) {
+        try {
+            return new ResponseEntity<>(loanService.findByUserId(userId), HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>("Failed to fetch loan: " + e.getMessage(), 
+                                     HttpStatus.BAD_REQUEST);
+        }
+    }
 }

@@ -5,16 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b550dc4b-c27b-45f3-8fd6-d591bf66fe35" name="Changes" comment="test">
-      <change afterPath="$PROJECT_DIR$/../back-end/src/main/java/com/example/lrpt/dto/LoginRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../back-end/data/db.mv.db" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../back-end/src/main/java/com/example/lrpt/controller/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/src/main/java/com/example/lrpt/controller/AccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../back-end/src/main/java/com/example/lrpt/controller/LoanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/src/main/java/com/example/lrpt/controller/LoanController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../back-end/src/main/java/com/example/lrpt/dto/AccountDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/src/main/java/com/example/lrpt/dto/AccountDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../back-end/src/main/java/com/example/lrpt/dto/LoanDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/src/main/java/com/example/lrpt/dto/LoanDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../back-end/src/main/java/com/example/lrpt/models/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/src/main/java/com/example/lrpt/models/Account.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../back-end/src/main/java/com/example/lrpt/models/Loan.java" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/src/main/java/com/example/lrpt/models/Loan.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../back-end/src/main/java/com/example/lrpt/repository/AccountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/src/main/java/com/example/lrpt/repository/AccountRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../back-end/src/main/java/com/example/lrpt/repository/LoanRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/src/main/java/com/example/lrpt/repository/LoanRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../back-end/src/main/java/com/example/lrpt/service/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/src/main/java/com/example/lrpt/service/AccountService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../back-end/src/main/java/com/example/lrpt/service/LoanService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/src/main/java/com/example/lrpt/service/LoanService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/LoanCreator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/LoanCreator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Customer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Customer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,8 +70,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "Steven-Back",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/stevenshackelford/Desktop/gittest/front-end",
@@ -76,7 +83,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "npm.start.executor": "Run",
-    "ts.external.directory.path": "/Applications/Rider.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
+    "ts.external.directory.path": "C:\\Users\\steve\\AppData\\Local\\JetBrains\\JetBrains Rider 2024.2.4\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -116,7 +123,7 @@
       <workItem from="1729886364927" duration="23000" />
       <workItem from="1730136995442" duration="749000" />
       <workItem from="1730905025180" duration="1914000" />
-      <workItem from="1731220990662" duration="2067000" />
+      <workItem from="1731220990662" duration="7110000" />
     </task>
     <task id="LOCAL-00001" summary="2">
       <option name="closed" value="true" />

@@ -23,7 +23,7 @@ public class AccountService {
 
     @Transactional(readOnly = true)
     public Account findAccount(long accountId) {
-        return accountRepository.findByAccountId(accountId).orElseThrow(()-> new IllegalArgumentException("Check Id"));
+        return accountRepository.findByuserId(accountId).orElseThrow(()-> new IllegalArgumentException("Check Id"));
     }
 
     @Transactional(readOnly = true)
@@ -37,7 +37,7 @@ public class AccountService {
         if (account1.getPassword().equals(password)) {
             return account1;
         }
-        return account1;
+        return null;
 
     }
 
