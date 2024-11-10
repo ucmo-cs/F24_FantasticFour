@@ -1,22 +1,59 @@
 import './App.css';
-import { Route, Router, Routes } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import PrivateRoute from './components/PrivateRoute';
+import Login from './pages/Login';
 import AdminDash from './pages/AdminDash';
-import LoanCreator from './pages/LoanCreator'
-import Login from './pages/Login'
-import SpecificLoan from './pages/SpecificLoan';
-import Customer from "./pages/Customer";
+import Customer from './pages/Customer';
+import LoanCreator from './pages/LoanCreator';
 
 function App() {
+  // Function to check user auth status and return appropriate redirect
+  const getHomeRedirect = () => {
+    const userString = localStorage.getItem('user');
+    if (!userString) {
+      return <Navigate to="/login" />;
+    }
+    const user = JSON.parse(userString);
+    return user.user_type ? <Navigate to="/admindash" /> : <Navigate to="/customer" />;
+  };
+
   return (
-    <div>
     <Routes>
-      <Route path="/" exact={true} element={<Login/>}/>
-      <Route path="/admindash" exact={true} element={<AdminDash/>}/>
-      <Route path="/loancreator" exact={true} element={<LoanCreator/>}/>
-      <Route path="/loan/:loanid" element={<SpecificLoan/>}/>
-      <Route path="/customer" element={<Customer/>}/>
+      {/* Root route */}
+      <Route path="/" element={getHomeRedirect()} />
+
+      {/* Auth route */}
+      <Route path="/login" element={<Login />} />
+
+      {/* Protected routes */}
+      <Route 
+        path="/admindash" 
+        element={
+          <PrivateRoute requiredRole={true}>
+            <AdminDash />
+          </PrivateRoute>
+        } 
+      />
+      <Route 
+        path="/customer" 
+        element={
+          <PrivateRoute requiredRole={false}>
+            <Customer />
+          </PrivateRoute>
+        } 
+      />
+      <Route 
+        path="/loancreator" 
+        element={
+          <PrivateRoute requiredRole={true}>
+            <LoanCreator />
+          </PrivateRoute>
+        } 
+      />
+
+      {/* Catch all for invalid routes */}
+      <Route path="*" element={<Navigate to="/login" />} />
     </Routes>
-  </div>
   );
 }
 

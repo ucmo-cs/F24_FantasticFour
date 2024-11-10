@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { Button, Form, Alert } from 'react-bootstrap';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Form, Button, Container, Alert } from 'react-bootstrap';
 
 function Login() {
   const [username, setUsername] = useState('');
@@ -8,10 +8,24 @@ function Login() {
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
-  const handleLogin = async (e) => {
+  // Check if user is already logged in
+  useEffect(() => {
+    const userString = localStorage.getItem('user');
+    if (userString) {
+      const user = JSON.parse(userString);
+      // Redirect based on user type
+      if (user.user_type) {
+        navigate('/admindash');
+      } else {
+        navigate('/customer');
+      }
+    }
+  }, [navigate]);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
-    
+
     try {
       const response = await fetch('http://localhost:8080/login', {
         method: 'POST',
@@ -20,65 +34,60 @@ function Login() {
         },
         body: JSON.stringify({
           userName: username,
-          password: password
-        })
+          password: password,
+        }),
       });
 
       if (!response.ok) {
-        if (response.status === 401) {
-          throw new Error('Invalid username or password');
-        } else {
-          throw new Error('An error occurred during login');
-        }
+        throw new Error('Invalid credentials');
       }
 
-      const accountData = await response.json();
-      localStorage.setItem('user', JSON.stringify(accountData));
+      const user = await response.json();
       
-      if (accountData.user_type) {
+      // Store user data in localStorage
+      localStorage.setItem('user', JSON.stringify(user));
+
+      // Redirect based on user type
+      if (user.user_type) {
         navigate('/admindash');
       } else {
         navigate('/customer');
       }
-      
-    } catch (error) {
-      console.error('Login error:', error);
-      setError(error.message);
+    } catch (err) {
+      setError(err.message);
     }
   };
 
   return (
-    <div>
-      {error && (
-        <Alert variant="danger" className="mb-3">
-          {error}
-        </Alert>
-      )}
-      
-      <Form onSubmit={handleLogin}>
-        <Form.Group className="mb-3" controlId="formBasicUsername">
+    <Container className="mt-5">
+      <h2>Login</h2>
+      {error && <Alert variant="danger">{error}</Alert>}
+      <Form onSubmit={handleSubmit}>
+        <Form.Group className="mb-3">
           <Form.Label>Username</Form.Label>
-          <Form.Control 
-            type="text" 
-            placeholder="Username" 
+          <Form.Control
+            type="text"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
+            required
           />
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Group className="mb-3">
           <Form.Label>Password</Form.Label>
-          <Form.Control 
-            type="password" 
-            placeholder="Password" 
+          <Form.Control
+            type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            required
           />
         </Form.Group>
-        
-        <Button variant="success" type="submit">Sign In</Button>
+
+        <Button variant="primary" type="submit">
+          Login
+        </Button>
       </Form>
-    </div>
+    </Container>
   );
 }
 
