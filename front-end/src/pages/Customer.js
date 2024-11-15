@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {Table} from "react-bootstrap";
 import {useNavigate} from "react-router-dom";
-
+import {Button} from 'react-bootstrap/Button';
 
  
 function Customer() {
@@ -48,7 +48,7 @@ function Customer() {
           </tbody>
         </Table>
        personal info:
-       edit button
+       <Button variant='success' onClick={moveToEditCustomer}>Edit</Button>
         <Table striped bordered hover>
           <thead>
             <tr>
