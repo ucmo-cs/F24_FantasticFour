@@ -63,7 +63,7 @@ function AdminDash() {
         </thead>
         <tbody>
           {loans.map(loan => (
-            <tr key={loan.loan_id}>
+            <tr key={loan.loanid}>
               <td>{formatDate(loan.created_at)}</td>
               <td>{loan.useraccount.userName}</td>
               <td>{loan.useraccount.email}</td>

@@ -1,10 +1,10 @@
 import './App.css';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import PrivateRoute from './components/PrivateRoute';
-import Login from './pages/Login';
-import AdminDash from './pages/AdminDash';
-import Customer from './pages/Customer';
-import LoanCreator from './pages/LoanCreator';
+import Login from './Pages/Login';
+import AdminDash from './Pages/AdminDash';
+import Customer from './Pages/Customer';
+import LoanCreator from './Pages/LoanCreator';
 
 function App() {
   // Function to check user auth status and return appropriate redirect
