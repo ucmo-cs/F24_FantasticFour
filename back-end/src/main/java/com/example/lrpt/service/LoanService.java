@@ -38,8 +38,8 @@ public class LoanService {
     }
 
     @Transactional(readOnly = true)
-    public Loan findByUserId(Long userId) {
-        return loanRepository.findByloanid(userId)
-            .orElseThrow(() -> new RuntimeException("Loan not found for user: " + userId));
+    public List<Loan> findByUserId(Long userId) {
+        return loanRepository.findByUseraccountUserId(userId)
+                .orElseThrow(() -> new RuntimeException("Loans not found for user: " + userId));
     }
 }

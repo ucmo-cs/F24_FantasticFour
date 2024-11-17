@@ -24,6 +24,80 @@
   color: white;
 }
 
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #f5f5f5;
+}
+
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.hover-highlight:hover {
+  background-color: rgba(0,123,255,0.1) !important;
+  transition: background-color 0.2s;
+}
+
+.card {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.table td, .table th {
+  vertical-align: middle !important;
+  padding: 1rem !important;
+}
+
+/* Improve table header appearance */
+.table thead th {
+  background-color: #f8f9fa;
+  border-bottom: 2px solid #dee2e6;
+  white-space: nowrap;
+}
+
+/* Add smooth transitions */
+.table tr {
+  transition: all 0.2s ease;
+}
+
+/* Improve hover state */
+.table-hover tbody tr:hover {
+  background-color: rgba(0,123,255,.05) !important;
+}
+
+.bg-light {
+  background-color: #f8f9fa !important;
+}
+.display-4 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+/* Improve form control appearance */
+.form-control {
+  padding: 0.75rem 1rem;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border-color: #80bdff;
+}
+
+/* Add transition effects */
+.btn {
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+
+
 .App-link {
   color: #61dafb;
 }

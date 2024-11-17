@@ -4,10 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b550dc4b-c27b-45f3-8fd6-d591bf66fe35" name="Changes" comment="2">
+    <list default="true" id="b550dc4b-c27b-45f3-8fd6-d591bf66fe35" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../back-end/data/db.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/data/db.mv.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../back-end/src/main/java/com/example/lrpt/repository/LoanRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/src/main/java/com/example/lrpt/repository/LoanRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../back-end/src/main/java/com/example/lrpt/service/LoanService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/src/main/java/com/example/lrpt/service/LoanService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pages/AdminDash.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/AdminDash.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/SpecificLoan.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/SpecificLoan.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PrivateRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PrivateRoute.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Customer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Customer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +119,10 @@
       <workItem from="1729886364927" duration="23000" />
       <workItem from="1730136995442" duration="749000" />
       <workItem from="1730905025180" duration="1914000" />
-      <workItem from="1731220990662" duration="8151000" />
+      <workItem from="1731220990662" duration="8466000" />
+      <workItem from="1731252337458" duration="5491000" />
+      <workItem from="1731881512825" duration="19000" />
+      <workItem from="1731884425743" duration="2665000" />
     </task>
     <task id="LOCAL-00001" summary="2">
       <option name="closed" value="true" />
@@ -161,7 +172,23 @@
       <option name="project" value="LOCAL" />
       <updated>1731249742429</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="3">
+      <option name="closed" value="true" />
+      <created>1731250802066</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1731250802066</updated>
+    </task>
+    <task id="LOCAL-00008" summary="forgor loancreator">
+      <option name="closed" value="true" />
+      <created>1731251074748</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1731251074748</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,11 +199,12 @@
   <component name="VcsManagerConfiguration">
     <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="3" />
     <MESSAGE value="sync" />
     <MESSAGE value="test" />
     <MESSAGE value="1" />
     <MESSAGE value="2" />
-    <option name="LAST_COMMIT_MESSAGE" value="2" />
+    <MESSAGE value="3" />
+    <MESSAGE value="forgor loancreator" />
+    <option name="LAST_COMMIT_MESSAGE" value="forgor loancreator" />
   </component>
 </project>

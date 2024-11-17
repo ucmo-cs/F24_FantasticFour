@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Form, Button, Container, Alert } from 'react-bootstrap';
+import { Form, Button, Container, Alert, Card, Table } from 'react-bootstrap';
 
 function Login() {
   const [username, setUsername] = useState('');
@@ -8,12 +8,10 @@ function Login() {
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
-  // Check if user is already logged in
   useEffect(() => {
     const userString = localStorage.getItem('user');
     if (userString) {
       const user = JSON.parse(userString);
-      // Redirect based on user type
       if (user.user_type) {
         navigate('/admindash');
       } else {
@@ -43,11 +41,8 @@ function Login() {
       }
 
       const user = await response.json();
-      
-      // Store user data in localStorage
       localStorage.setItem('user', JSON.stringify(user));
 
-      // Redirect based on user type
       if (user.user_type) {
         navigate('/admindash');
       } else {
@@ -59,35 +54,73 @@ function Login() {
   };
 
   return (
-    <Container className="mt-5">
-      <h2>Login</h2>
-      {error && <Alert variant="danger">{error}</Alert>}
-      <Form onSubmit={handleSubmit}>
-        <Form.Group className="mb-3">
-          <Form.Label>Username</Form.Label>
-          <Form.Control
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            required
-          />
-        </Form.Group>
+    <div style={{ 
+      minHeight: '100vh',
+      backgroundColor: '#f5f5f5',
+      padding: '2rem',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center'
+    }}>
+      <Container style={{ maxWidth: '600px' }}>
+        <Card className="shadow">
+          <Card.Header className="bg-primary text-white py-3">
+            <h2 className="mb-0 text-center">Loan Management System</h2>
+          </Card.Header>
+          <Card.Body className="p-4">
+            {error && <Alert variant="danger">{error}</Alert>}
+            
+            <Form onSubmit={handleSubmit}>
+              <Table bordered>
+                <tbody>
+                  <tr>
+                    <td className="bg-light" width="30%">
+                      <Form.Label className="mb-0">Username</Form.Label>
+                    </td>
+                    <td>
+                      <Form.Control
+                        type="text"
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
+                        required
+                        placeholder="Enter username"
+                        className="border-0"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="bg-light">
+                      <Form.Label className="mb-0">Password</Form.Label>
+                    </td>
+                    <td>
+                      <Form.Control
+                        type="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        required
+                        placeholder="Enter password"
+                        className="border-0"
+                      />
+                    </td>
+                  </tr>
+                </tbody>
+              </Table>
 
-        <Form.Group className="mb-3">
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </Form.Group>
-
-        <Button variant="primary" type="submit">
-          Login
-        </Button>
-      </Form>
-    </Container>
+              <div className="text-center mt-4">
+                <Button 
+                  variant="primary" 
+                  type="submit" 
+                  size="lg"
+                  className="px-5"
+                >
+                  Login
+                </Button>
+              </div>
+            </Form>
+          </Card.Body>
+        </Card>
+      </Container>
+    </div>
   );
 }
 

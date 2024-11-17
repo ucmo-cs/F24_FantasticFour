@@ -1,12 +1,30 @@
 import './App.css';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import PrivateRoute from './components/PrivateRoute';
-import Login from './Pages/Login';
-import AdminDash from './Pages/AdminDash';
-import Customer from './Pages/Customer';
-import LoanCreator from './Pages/LoanCreator';
+import Login from './pages/Login';
+import AdminDash from './pages/AdminDash';
+import Customer from './pages/Customer';
+import LoanCreator from './pages/LoanCreator';
+import SpecificLoan from './pages/SpecificLoan';
+import { useEffect } from 'react';
 
 function App() {
+  useEffect(() => {
+    // Handle tab/window close
+    const handleBeforeUnload = () => {
+      localStorage.removeItem('user');
+    };
+
+    // Add event listeners
+    window.addEventListener('beforeunload', handleBeforeUnload);
+
+    // Cleanup event listeners
+    return () => {
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+
+    };
+  }, []);
+
   // Function to check user auth status and return appropriate redirect
   const getHomeRedirect = () => {
     const userString = localStorage.getItem('user');
@@ -42,6 +60,16 @@ function App() {
           </PrivateRoute>
         } 
       />
+
+      <Route 
+        path="/loan/:loanid" 
+        element={
+          <PrivateRoute requiredRole={true}>
+            <SpecificLoan />
+          </PrivateRoute>
+        } 
+      />
+        
       <Route 
         path="/loancreator" 
         element={

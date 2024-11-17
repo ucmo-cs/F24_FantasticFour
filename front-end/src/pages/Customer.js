@@ -1,25 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, Card, Form, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import Logout from "../components/Logout";
 
 function Customer() {
   const navigate = useNavigate();
-  const [loan, setLoan] = useState({
-    loan_id: null,
-    loan_origin_amount: 0,
-    amountOwed: 0,
-    interest_rate: 0,
-    automaticPayment: 0,
-    created_at: null,
-    user_account: {
-      userId: null,
-      userName: '',
-      email: '',
-      phoneNumber: '',
-      bankAccount: '',
-      bankRouting: ''
-    }
-  });
+  const [loans, setLoans] = useState([]);
+  const [selectedLoan, setSelectedLoan] = useState(null);
 
   const [isEditing, setIsEditing] = useState(false);
   const [error, setError] = useState('');
@@ -40,20 +27,22 @@ function Customer() {
 
     const user = JSON.parse(userString);
     
-    // Fetch loan details for this user
+    // Fetch loans for user
     fetch(`http://localhost:8080/loans/user/${user.userId}`)
       .then(res => {
-        if (!res.ok) throw new Error('Failed to fetch loan details');
+        if (!res.ok) throw new Error('Failed to fetch loans');
         return res.json();
       })
       .then(data => {
-        setLoan(data);
-        // Populate form fields with existing data
-        setUserName(data.user_account.userName || '');
-        setEmail(data.user_account.email || '');
-        setPhoneNumber(data.user_account.phoneNumber || '');
-        setBankAccount(data.user_account.bankAccount || '');
-        setBankRouting(data.user_account.bankRouting || '');
+        setLoans(data);
+        if (data && data.length > 0 && data[0].useraccount) {
+          setSelectedLoan(data[0]);
+          setUserName(data[0].useraccount.userName || '');
+          setEmail(data[0].useraccount.email || '');
+          setPhoneNumber(data[0].useraccount.phoneNumber || '');
+          setBankAccount(data[0].useraccount.bankAccount || '');
+          setBankRouting(data[0].useraccount.bankRouting || '');
+        }
       })
       .catch(err => setError(err.message));
   }, [navigate]);
@@ -63,7 +52,7 @@ function Customer() {
     setError('');
 
     try {
-      const response = await fetch(`http://localhost:8080/account/${loan.user_account.userId}`, {
+      const response = await fetch(`http://localhost:8080/account/${selectedLoan.useraccount.userId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -80,7 +69,6 @@ function Customer() {
       if (!response.ok) throw new Error('Failed to update account details');
       
       setIsEditing(false);
-      // Refresh loan data
       window.location.reload();
     } catch (err) {
       setError(err.message);
@@ -105,23 +93,25 @@ function Customer() {
   return (
     <Container className="mt-5">
       {error && <div className="alert alert-danger">{error}</div>}
-      
+      <Logout />
       <Row>
         <Col md={6}>
-          <Card className="mb-4">
-            <Card.Header>
-              <h4>Loan Details</h4>
-            </Card.Header>
-            <Card.Body>
-              <p><strong>Date Taken:</strong> {formatDate(loan.created_at)}</p>
-              <p><strong>Amount Due:</strong> {formatCurrency(loan.amountOwed)}</p>
-              <p><strong>Original Amount:</strong> {formatCurrency(loan.loan_origin_amount)}</p>
-              <p><strong>Interest Rate:</strong> {loan.interest_rate}%</p>
-              {loan.automaticPayment > 0 && (
-                <p><strong>Automatic Payment:</strong> {formatCurrency(loan.automaticPayment)}/month</p>
-              )}
-            </Card.Body>
-          </Card>
+          {loans.map((loan, index) => (
+            <Card key={loan.loanid} className="mb-4">
+              <Card.Header>
+                <h4>Loan {index + 1} Details</h4>
+              </Card.Header>
+              <Card.Body>
+                <p><strong>Date Taken:</strong> {formatDate(loan.created_at)}</p>
+                <p><strong>Amount Due:</strong> {formatCurrency(loan.amountOwed)}</p>
+                <p><strong>Original Amount:</strong> {formatCurrency(loan.loan_origin_amount)}</p>
+                <p><strong>Interest Rate:</strong> {loan.interest_rate}%</p>
+                {loan.automaticPayment > 0 && (
+                  <p><strong>Automatic Payment:</strong> {formatCurrency(loan.automaticPayment)}/month</p>
+                )}
+              </Card.Body>
+            </Card>
+          ))}
         </Col>
 
         <Col md={6}>
