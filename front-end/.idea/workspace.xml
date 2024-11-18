@@ -5,8 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b550dc4b-c27b-45f3-8fd6-d591bf66fe35" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/pages/AdminDash.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/LoanCreator.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/SpecificLoan.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../back-end/data/db.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/data/db.mv.db" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/../back-end/src/main/java/com/example/lrpt/controller/LoanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/src/main/java/com/example/lrpt/controller/LoanController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Customer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Customer.js" afterDir="false" />
+>>>>>>> Steven-Back
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +124,11 @@
       <workItem from="1731252337458" duration="5491000" />
       <workItem from="1731881512825" duration="19000" />
       <workItem from="1731884425743" duration="2665000" />
+<<<<<<< HEAD
       <workItem from="1731887453640" duration="45000" />
+=======
+      <workItem from="1731945048025" duration="1232000" />
+>>>>>>> Steven-Back
     </task>
     <task id="LOCAL-00001" summary="2">
       <option name="closed" value="true" />

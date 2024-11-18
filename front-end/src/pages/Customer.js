@@ -106,7 +106,7 @@ function Customer() {
                 <p><strong>Amount Due:</strong> {formatCurrency(loan.amountOwed)}</p>
                 <p><strong>Original Amount:</strong> {formatCurrency(loan.loan_origin_amount)}</p>
                 <p><strong>Interest Rate:</strong> {loan.interest_rate}%</p>
-                {loan.automaticPayment > 0 && (
+                {loan.automaticPayment >= 0 && (
                   <p><strong>Automatic Payment:</strong> {formatCurrency(loan.automaticPayment)}/month</p>
                 )}
               </Card.Body>

@@ -1,7 +1,7 @@
 import './App.css';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import PrivateRoute from './components/PrivateRoute';
-import Login from './pages/Login';
+
 import AdminDash from './pages/AdminDash';
 import Customer from './pages/Customer';
 import LoanCreator from './pages/LoanCreator';

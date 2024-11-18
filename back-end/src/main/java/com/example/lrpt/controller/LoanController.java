@@ -29,7 +29,8 @@ public class LoanController {
             loan.setAmountOwed(loan.getLoan_origin_amount()); // Initially, amount due equals loan amount
             
             // Get account ID from the nested user_account object
-            long accountId = loanDto.getUser_account().getUserId();
+            //long accountId = loanDto.getUser_account().getUserId();
+            long accountId = 2;
             
             // Calculate payoff date if needed (example: 12 months from now)
             Calendar calendar = Calendar.getInstance();
