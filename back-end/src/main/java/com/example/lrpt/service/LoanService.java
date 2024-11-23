@@ -42,4 +42,9 @@ public class LoanService {
         return loanRepository.findByUseraccountUserId(userId)
                 .orElseThrow(() -> new RuntimeException("Loans not found for user: " + userId));
     }
+
+    @Transactional
+    public void save(Loan loan) {
+        loanRepository.save(loan);
+    }
 }

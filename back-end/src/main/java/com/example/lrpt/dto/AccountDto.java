@@ -9,6 +9,7 @@ public class AccountDto {
 
     private Long userId;
     private String userName;
+    private String firstName;
     private String password;
     private String email;
     private String phoneNumber;

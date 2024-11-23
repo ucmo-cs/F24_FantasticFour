@@ -3,6 +3,8 @@ package com.example.lrpt.controller;
 
 import com.example.lrpt.models.Account;
 import com.example.lrpt.dto.AccountDto;
+import com.example.lrpt.models.Loan;
+import com.example.lrpt.repository.AccountRepository;
 import com.example.lrpt.service.AccountService;
 import lombok.AllArgsConstructor;
 
@@ -18,6 +20,7 @@ import java.sql.Timestamp;
 public class AccountController {
 
     private final AccountService accountService;
+
 
     @CrossOrigin
     @PostMapping("/account")
@@ -55,6 +58,23 @@ public class AccountController {
         return new ResponseEntity<>(accountService.findAccount(id), HttpStatus.OK);
     }
 
+    @CrossOrigin
+    @PutMapping("/account/update-account")
+    public ResponseEntity<?> updateAccount(@RequestBody AccountDto accountDto) {
+        try {
+            Account account = accountService.findAccount(accountDto.getUserId());
+            account.setFirstName(accountDto.getFirstName());
+            account.setBankAccount(accountDto.getBankAccount());
+            account.setBankRouting(accountDto.getBankRouting());
+            account.setEmail(accountDto.getEmail());
+            account.setPhoneNumber(accountDto.getPhoneNumber());
+            accountService.save(account);
+            return new ResponseEntity<>("Account Information updated", HttpStatus.OK);
 
+        }
+        catch (Exception e) {
+            return new ResponseEntity<>("Failed to update Account: ", HttpStatus.BAD_REQUEST);
+        }
+    }
 
 }
