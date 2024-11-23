@@ -4,42 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b550dc4b-c27b-45f3-8fd6-d591bf66fe35" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../back-end/src/main/java/com/example/lrpt/dto/AutomaticPaymentDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../back-end/.gradle/8.10.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/.gradle/8.10.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../back-end/.gradle/8.10.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/.gradle/8.10.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../back-end/.gradle/8.10.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/.gradle/8.10.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../back-end/.gradle/8.10.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/.gradle/8.10.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../back-end/.gradle/8.10.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/.gradle/8.10.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../back-end/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../back-end/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../back-end/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../back-end/build/classes/java/main/com/example/lrpt/controller/AccountController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/build/classes/java/main/com/example/lrpt/controller/AccountController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../back-end/build/classes/java/main/com/example/lrpt/controller/LoanController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/build/classes/java/main/com/example/lrpt/controller/LoanController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../back-end/build/classes/java/main/com/example/lrpt/dto/AccountDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/build/classes/java/main/com/example/lrpt/dto/AccountDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../back-end/build/classes/java/main/com/example/lrpt/models/Account.class" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/build/classes/java/main/com/example/lrpt/models/Account.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../back-end/build/classes/java/main/com/example/lrpt/service/AccountService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/build/classes/java/main/com/example/lrpt/service/AccountService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../back-end/build/classes/java/main/com/example/lrpt/service/LoanService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/build/classes/java/main/com/example/lrpt/service/LoanService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../back-end/build/tmp/compileJava/compileTransaction/stash-dir/LoanController.class.uniqueId0" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/build/tmp/compileJava/compileTransaction/stash-dir/LoanController.class.uniqueId0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../back-end/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../back-end/data/db.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/data/db.mv.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../back-end/src/main/java/com/example/lrpt/controller/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/src/main/java/com/example/lrpt/controller/AccountController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../back-end/src/main/java/com/example/lrpt/controller/LoanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/src/main/java/com/example/lrpt/controller/LoanController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../back-end/src/main/java/com/example/lrpt/dto/AccountDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/src/main/java/com/example/lrpt/dto/AccountDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../back-end/src/main/java/com/example/lrpt/models/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/src/main/java/com/example/lrpt/models/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../back-end/src/main/java/com/example/lrpt/service/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/src/main/java/com/example/lrpt/service/AccountService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../back-end/src/main/java/com/example/lrpt/service/LoanService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/src/main/java/com/example/lrpt/service/LoanService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+    <list default="true" id="b550dc4b-c27b-45f3-8fd6-d591bf66fe35" name="Changes" comment="front temp">
       <change beforePath="$PROJECT_DIR$/src/Pages/AdminDash.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/AdminDash.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pages/LoanCreator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/LoanCreator.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pages/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Login.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pages/SpecificLoan.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/SpecificLoan.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Logout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Logout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PrivateRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PrivateRoute.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Customer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Customer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,7 +122,7 @@
       <workItem from="1732348603838" duration="108000" />
       <workItem from="1732348763109" duration="1975000" />
       <workItem from="1732379887967" duration="10000" />
-      <workItem from="1732383193948" duration="1274000" />
+      <workItem from="1732383193948" duration="1429000" />
     </task>
     <task id="LOCAL-00001" summary="2">
       <option name="closed" value="true" />
@@ -219,7 +188,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731251074748</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="temp design">
+      <option name="closed" value="true" />
+      <created>1732384554812</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1732384554812</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,6 +213,8 @@
     <MESSAGE value="2" />
     <MESSAGE value="3" />
     <MESSAGE value="forgor loancreator" />
-    <option name="LAST_COMMIT_MESSAGE" value="forgor loancreator" />
+    <MESSAGE value="temp design" />
+    <MESSAGE value="front temp" />
+    <option name="LAST_COMMIT_MESSAGE" value="front temp" />
   </component>
 </project>
