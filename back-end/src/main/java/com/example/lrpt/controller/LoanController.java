@@ -1,5 +1,6 @@
 package com.example.lrpt.controller;
 
+import com.example.lrpt.dto.AutomaticPaymentDto;
 import com.example.lrpt.dto.LoanDto;
 import com.example.lrpt.models.Loan;
 import com.example.lrpt.service.LoanService;
@@ -10,7 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.Timestamp;
-import java.util.Calendar;
+
 
 @AllArgsConstructor
 @RestController
@@ -30,11 +31,6 @@ public class LoanController {
             
             // Get account ID from the nested user_account object
             long accountId = loanDto.getUser_account().getUserId();
-            
-            // Calculate payoff date if needed (example: 12 months from now)
-            Calendar calendar = Calendar.getInstance();
-            calendar.add(Calendar.YEAR, 1); // Add 1 year
-            //loan.setPayoff_date(new Timestamp(calendar.getTimeInMillis()));
             
             return new ResponseEntity<>(loanService.create(loan, accountId), HttpStatus.CREATED);
         } catch (Exception e) {
@@ -64,6 +60,21 @@ public class LoanController {
         } catch (Exception e) {
             return new ResponseEntity<>("Failed to fetch loan: " + e.getMessage(), 
                                      HttpStatus.BAD_REQUEST);
+        }
+    }
+
+    @CrossOrigin
+    @PutMapping("/loans/update-automatic-payment")
+    public ResponseEntity<?> updateAutomaticPayment(@RequestBody AutomaticPaymentDto autoPaymentDto) {
+        try {
+            Loan loan = loanService.findByloanid(autoPaymentDto.getLoanid());
+            loan.setAutomaticPayment(autoPaymentDto.getAutomaticPayment());
+            loanService.save(loan);
+            return new ResponseEntity<>("Automatic payment updated", HttpStatus.OK);
+
+        }
+        catch (Exception e) {
+            return new ResponseEntity<>("Failed to update automatic Payment", HttpStatus.BAD_REQUEST);
         }
     }
 }
