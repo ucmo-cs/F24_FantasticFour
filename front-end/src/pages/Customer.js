@@ -21,6 +21,11 @@ function Customer() {
   });
 
   useEffect(() => {
+    fetchLoans();
+    fetchCustomerDetails();
+  }, [navigate]);
+
+  const fetchLoans = () => {
     const userString = localStorage.getItem('user');
     if (!userString) {
       navigate('/login');
@@ -29,7 +34,6 @@ function Customer() {
 
     const user = JSON.parse(userString);
 
-    //Fetch loans for user
     fetch(`http://localhost:8080/loans/user/${user.userId}`)
         .then(res => {
           if (!res.ok) throw new Error('Failed to fetch loans');
@@ -47,8 +51,17 @@ function Customer() {
           setIsEditing(editingState);
         })
         .catch(err => setError(err.message));
+  };
 
-    //Fetch customer details
+  const fetchCustomerDetails = () => {
+    const userString = localStorage.getItem('user');
+    if (!userString) {
+      navigate('/login');
+      return;
+    }
+
+    const user = JSON.parse(userString);
+
     fetch(`http://localhost:8080/account/${user.userId}`)
         .then(res => {
           if (!res.ok) throw new Error('Failed to fetch customer details');
@@ -64,14 +77,13 @@ function Customer() {
           });
         })
         .catch(err => setError(err.message));
-  }, [navigate]);
+  };
 
   const handleSubmit = async (e, loanId) => {
     e.preventDefault();
     setError('');
 
     try {
-      //Put request to update automatic payment
       const response = await fetch(`http://localhost:8080/loans/update-automatic-payment`, {
         method: 'PUT',
         headers: {
@@ -124,7 +136,6 @@ function Customer() {
     const updatedDetails = { ...customerDetails, userId: user.userId };
 
     try {
-      //Request to update customer details
       const response = await fetch(`http://localhost:8080/account/update-account`, {
         method: 'PUT',
         headers: {
@@ -156,7 +167,7 @@ function Customer() {
   };
 
   const calculatePayoffTime = (amountOwed, automaticPayment, interestRate) => {
-    if (automaticPayment <= 0 || interestRate <= 0) return 'Too Many';
+    if (automaticPayment <= 0 || interestRate <= 0) return 'Free Money';
     const monthlyInterestRate = interestRate / 100 / 12;
     const months = Math.log(automaticPayment / (automaticPayment - amountOwed * monthlyInterestRate)) / Math.log(1 + monthlyInterestRate);
     return Math.ceil(months) + ' months';
@@ -165,7 +176,7 @@ function Customer() {
   return (
       <>
         <Header />
-        <Container className="d-flex justify-content-center align-items-center" style={{ minHeight: '100vh', maxWidth: '90%' }}>
+        <Container className="d-flex justify-content-center align-items-center" style={{ minHeight: '100vh', }}>
           <Card className="rounded shadow w-100" style={{ maxWidth: '100%' }}>
             <Card.Body>
               {error && <div className="alert alert-danger">{error}</div>}
@@ -173,6 +184,9 @@ function Customer() {
                 <Tab eventKey="loans" title="Loans">
                   <Row className="justify-content-center">
                     <Col md={12}>
+                      <Button variant="secondary" onClick={fetchLoans} className="mb-3">
+                        Refresh
+                      </Button>
                       <Card className="rounded">
                         <Card.Body>
                           <Table striped bordered hover>

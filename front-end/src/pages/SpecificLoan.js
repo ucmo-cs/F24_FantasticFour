@@ -110,7 +110,6 @@ function SpecificLoan() {
               </Button>
               <span className="ms-2">Loan Details #{loanid}</span>
             </div>
-            <Logout />
           </Card.Header>
 
           <Card.Body className="p-4">

@@ -9,7 +9,7 @@ function Header() {
 
     return (
         <Navbar bg="success" expand="lg">
-            <Container className="headerImg">
+            <Container className="headerImg rounded-5">
                 <Container >
                 <Navbar.Brand>
                     <img

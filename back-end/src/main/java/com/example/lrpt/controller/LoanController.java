@@ -69,6 +69,11 @@ public class LoanController {
         try {
             Loan loan = loanService.findByloanid(autoPaymentDto.getLoanid());
             loan.setAutomaticPayment(autoPaymentDto.getAutomaticPayment());
+            //Testing to lower the amount owed for having partially paid loans
+            loan.setAmountOwed(loan.getAmountOwed() - autoPaymentDto.getAutomaticPayment());
+            if (loan.getAmountOwed() <= 0) {
+                loan.setAmountOwed(0.0);
+            }
             loanService.save(loan);
             return new ResponseEntity<>("Automatic payment updated", HttpStatus.OK);
 

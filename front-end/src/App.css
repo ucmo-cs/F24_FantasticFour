@@ -1,8 +1,12 @@
 body, html {
   height: 100%;
-  background-color: #216200;
+  background-color: #006648;
   margin: 0;
   padding: 0;
+  background-image: url('/resources/op_95th-antioch01.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .centered-container {
@@ -11,25 +15,13 @@ body, html {
   align-items: center;
   min-height: 100vh;
   width: 100%;
-  background-color: transparent; /* Ensure the container is transparent */
+  background-color: transparent;
 }
 
 .card {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 2rem;
-  /*background-color: white; /* If you want the card to have a white background */
 }
-
-.table-responsive {
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-}
-
-.hover-highlight:hover {
-  background-color: rgba(0,123,255,0.1) !important;
-  transition: background-color 0.2s;
-}
-
 .table td, .table th {
   vertical-align: middle !important;
   padding: 1rem !important;
@@ -42,6 +34,11 @@ body, html {
 
 .table tr {
   transition: all 0.2s ease;
+}
+
+.table {
+  width: auto;
+  table-layout: auto;
 }
 
 .table-hover tbody tr:hover {
