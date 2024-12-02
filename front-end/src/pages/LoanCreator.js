@@ -61,14 +61,14 @@ function LoanCreator() {
       let accountId;
 
       if (isNewAccount) {
-        //Create new account first
+        // Create new account first
         const newAccount = await createAccount();
         accountId = newAccount.userId;
       } else {
         accountId = parseInt(selectedAccount, 10);
       }
 
-      //Create loan with account ID
+      // Create loan with account ID
       const response = await fetch("http://localhost:8080/loans", {
         method: "POST",
         headers: {
@@ -118,7 +118,7 @@ function LoanCreator() {
           </Card.Header>
           <Card.Body>
             {isNewAccount ? (
-              //New Account Form
+              // New Account Form
               <Row>
                 <Col md={12}>
                   <Table bordered>
@@ -188,7 +188,7 @@ function LoanCreator() {
                 </Col>
               </Row>
             ) : (
-              //Existing Account Selection
+              // Existing Account Selection
               <Row>
                 <Col md={12}>
                   <Table bordered>

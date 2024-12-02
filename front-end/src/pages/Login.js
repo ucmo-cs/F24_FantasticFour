@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Form, Button, Container, Alert, Card, Table } from 'react-bootstrap';
-import Header from "../components/Header";
 
 function Login() {
   const [username, setUsername] = useState('');
@@ -55,11 +54,9 @@ function Login() {
   };
 
   return (
-      <>
-      <Header />
     <div style={{ 
       minHeight: '100vh',
-
+      backgroundColor: '#f5f5f5',
       padding: '2rem',
       display: 'flex',
       alignItems: 'center',
@@ -67,7 +64,7 @@ function Login() {
     }}>
       <Container style={{ maxWidth: '600px' }}>
         <Card className="shadow">
-          <Card.Header className="bg-success text-white py-3">
+          <Card.Header className="bg-primary text-white py-3">
             <h2 className="mb-0 text-center">Loan Management System</h2>
           </Card.Header>
           <Card.Body className="p-4">
@@ -124,7 +121,6 @@ function Login() {
         </Card>
       </Container>
     </div>
-        </>
   );
 }
 
