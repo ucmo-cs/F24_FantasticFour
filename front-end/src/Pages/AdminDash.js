@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Table, Button, Card } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import Logout from '../components/Logout';
+import Header from "../components/Header";
 
 function AdminDash() {
   const [loans, setLoans] = useState([]);
@@ -37,22 +37,29 @@ function AdminDash() {
   };
 
   return (
+      <>
+        <Header />
     <div style={{ 
       minHeight: '100vh',
-      backgroundColor: '#f5f5f5',
+
       padding: '2rem'
     }}>
       <Container 
         className="d-flex justify-content-center"
-        style={{ 
+        style={{
+          
           maxWidth: '1400px',
           margin: '0 auto'
         }}
       >
-        <Card className="shadow w-100">
-          <Card.Header className="bg-primary text-white d-flex justify-content-between align-items-center py-3">
+        <Card className="shadow w-100" style={{
+          backgroundColor: '#d4d4d4',
+          borderRadius: '30px'
+
+        }}>
+          <Card.Header className="bg-success text-white d-flex justify-content-between align-items-center py-3">
             <h2 className="mb-0">Loan Management Dashboard</h2>
-            <div>
+            <div >
               <Button 
                 variant="light" 
                 className="me-2"
@@ -60,14 +67,15 @@ function AdminDash() {
               >
                 Create New Loan
               </Button>
-              <Logout />
             </div>
           </Card.Header>
 
           <Card.Body className="p-4">
-            {error && <div className="alert alert-danger">{error}</div>}
+            {error && <div className="alert alert-danger" >{error}</div>}
 
-            <div className="table-responsive">
+            <div className="table-responsive" style={{
+              backgroundColor: '#a3a3a3'
+            }}>
               <Table 
                 striped 
                 bordered 
@@ -78,12 +86,10 @@ function AdminDash() {
                   <tr>
                     <th className="text-center py-3">Date Created</th>
                     <th className="text-center py-3">Customer Name</th>
-                    <th className="text-center py-3">Email</th>
-                    <th className="text-center py-3">Phone</th>
                     <th className="text-center py-3">Original Amount</th>
                     <th className="text-center py-3">Amount Owed</th>
                     <th className="text-center py-3">Interest Rate</th>
-                    <th className="text-center py-3">Auto Payment</th>
+
                   </tr>
                 </thead>
                 <tbody>
@@ -96,16 +102,9 @@ function AdminDash() {
                     >
                       <td className="text-center py-3">{formatDate(loan.created_at)}</td>
                       <td className="text-center py-3">{loan.useraccount?.userName}</td>
-                      <td className="text-center py-3">{loan.useraccount?.email}</td>
-                      <td className="text-center py-3">{loan.useraccount?.phoneNumber}</td>
                       <td className="text-center py-3">{formatCurrency(loan.loan_origin_amount)}</td>
                       <td className="text-center py-3">{formatCurrency(loan.amountOwed)}</td>
                       <td className="text-center py-3">{loan.interest_rate}%</td>
-                      <td className="text-center py-3">
-                        {loan.automaticPayment > 0 
-                          ? formatCurrency(loan.automaticPayment) + '/month' 
-                          : 'Not Set'}
-                      </td>
                     </tr>
                   ))}
                 </tbody>
@@ -115,6 +114,7 @@ function AdminDash() {
         </Card>
       </Container>
     </div>
+        </>
   );
 }
 
