@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Container, Card, Table } from 'react-bootstrap';
 import { useNavigate, useParams } from 'react-router-dom';
+import Logout from '../components/Logout';
 import Header from '../components/Header';
 
 function SpecificLoan() {
@@ -87,9 +88,10 @@ function SpecificLoan() {
 
   return (
       <>
-      <Header userName="" />
+        <Header />
     <div style={{ 
       minHeight: '100vh',
+
       padding: '2rem'
     }}>
       <Container 

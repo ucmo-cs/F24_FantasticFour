@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Form, Button, Container, Alert, Card, Table } from 'react-bootstrap';
-import Header from '../components/Header';
+import Header from "../components/Header";
 
 function Login() {
   const [username, setUsername] = useState('');
@@ -56,74 +56,75 @@ function Login() {
 
   return (
       <>
-        <Header userName="" />
-        <div style={{
-          minHeight: '100vh',
-          padding: '2rem',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center'
-        }}>
-          <Container style={{ maxWidth: '600px' }}>
-            <Card className="shadow">
-              <Card.Header className="bg-success text-white py-3">
-                <h2 className="mb-0 text-center">Loan Management System</h2>
-              </Card.Header>
-              <Card.Body className="p-4">
-                {error && <Alert variant="danger">{error}</Alert>}
+      <Header />
+    <div style={{ 
+      minHeight: '100vh',
 
-                <Form onSubmit={handleSubmit}>
-                  <Table bordered>
-                    <tbody>
-                    <tr>
-                      <td className="bg-light" width="30%">
-                        <Form.Label className="mb-0">Username</Form.Label>
-                      </td>
-                      <td>
-                        <Form.Control
-                            type="text"
-                            value={username}
-                            onChange={(e) => setUsername(e.target.value)}
-                            required
-                            placeholder="Enter username"
-                            className="border-0"
-                        />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="bg-light">
-                        <Form.Label className="mb-0">Password</Form.Label>
-                      </td>
-                      <td>
-                        <Form.Control
-                            type="password"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                            required
-                            placeholder="Enter password"
-                            className="border-0"
-                        />
-                      </td>
-                    </tr>
-                    </tbody>
-                  </Table>
+      padding: '2rem',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center'
+    }}>
+      <Container style={{ maxWidth: '600px' }}>
+        <Card className="shadow">
+          <Card.Header className="bg-success text-white py-3">
+            <h2 className="mb-0 text-center">Loan Management System</h2>
+          </Card.Header>
+          <Card.Body className="p-4">
+            {error && <Alert variant="danger">{error}</Alert>}
+            
+            <Form onSubmit={handleSubmit}>
+              <Table bordered>
+                <tbody>
+                  <tr>
+                    <td className="bg-light" width="30%">
+                      <Form.Label className="mb-0">Username</Form.Label>
+                    </td>
+                    <td>
+                      <Form.Control
+                        type="text"
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
+                        required
+                        placeholder="Enter username"
+                        className="border-0"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="bg-light">
+                      <Form.Label className="mb-0">Password</Form.Label>
+                    </td>
+                    <td>
+                      <Form.Control
+                        type="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        required
+                        placeholder="Enter password"
+                        className="border-0"
+                      />
+                    </td>
+                  </tr>
+                </tbody>
+              </Table>
 
-                  <div className="text-center mt-4">
-                    <Button
-                        variant="primary"
-                        type="submit"
-                        size="lg"
-                        className="px-5"
-                    >
-                      Login
-                    </Button>
-                  </div>
-                </Form>
-              </Card.Body>
-            </Card>
-          </Container>
-        </div>
-      </>
+              <div className="text-center mt-4">
+                <Button 
+                  variant="primary" 
+                  type="submit" 
+                  size="lg"
+                  className="px-5"
+                >
+                  Login
+                </Button>
+              </div>
+            </Form>
+          </Card.Body>
+        </Card>
+      </Container>
+    </div>
+        </>
   );
 }
 
