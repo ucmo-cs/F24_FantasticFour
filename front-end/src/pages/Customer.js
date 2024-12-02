@@ -167,7 +167,7 @@ function Customer() {
   };
 
   const calculatePayoffTime = (amountOwed, automaticPayment, interestRate) => {
-    if (automaticPayment <= 0 || interestRate <= 0) return 'Free Money';
+    if (automaticPayment <= 0 || interestRate <= 0) return 'NaN';
     const monthlyInterestRate = interestRate / 100 / 12;
     const months = Math.log(automaticPayment / (automaticPayment - amountOwed * monthlyInterestRate)) / Math.log(1 + monthlyInterestRate);
     return Math.ceil(months) + ' months';
