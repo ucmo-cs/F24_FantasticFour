@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Table, Button, Card } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import Logout from '../components/Logout';
+
+import Header from '../components/Header';
 
 function AdminDash() {
   const [loans, setLoans] = useState([]);
@@ -37,9 +38,10 @@ function AdminDash() {
   };
 
   return (
+      <>
+      <Header userName="" />
     <div style={{ 
       minHeight: '100vh',
-      backgroundColor: '#f5f5f5',
       padding: '2rem'
     }}>
       <Container 
@@ -50,7 +52,7 @@ function AdminDash() {
         }}
       >
         <Card className="shadow w-100">
-          <Card.Header className="bg-primary text-white d-flex justify-content-between align-items-center py-3">
+          <Card.Header className="bg-success text-white d-flex justify-content-between align-items-center py-3">
             <h2 className="mb-0">Loan Management Dashboard</h2>
             <div>
               <Button 
@@ -60,7 +62,6 @@ function AdminDash() {
               >
                 Create New Loan
               </Button>
-              <Logout />
             </div>
           </Card.Header>
 
@@ -115,6 +116,7 @@ function AdminDash() {
         </Card>
       </Container>
     </div>
+      </>
   );
 }
 

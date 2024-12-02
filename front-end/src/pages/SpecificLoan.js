@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Container, Card, Table } from 'react-bootstrap';
 import { useNavigate, useParams } from 'react-router-dom';
-import Logout from '../components/Logout';
+import Header from '../components/Header';
 
 function SpecificLoan() {
   const { loanid } = useParams();
@@ -86,9 +86,10 @@ function SpecificLoan() {
   );
 
   return (
+      <>
+      <Header userName="" />
     <div style={{ 
       minHeight: '100vh',
-      backgroundColor: '#f5f5f5',
       padding: '2rem'
     }}>
       <Container 
@@ -96,7 +97,7 @@ function SpecificLoan() {
         style={{ maxWidth: '1200px' }}
       >
         <Card className="shadow w-100">
-          <Card.Header className="bg-primary text-white d-flex justify-content-between align-items-center py-3">
+          <Card.Header className="bg-success text-white d-flex justify-content-between align-items-center py-3">
             <div>
               <Button 
                 variant="light" 
@@ -107,7 +108,6 @@ function SpecificLoan() {
               </Button>
               <span className="ms-2">Loan Details #{loanid}</span>
             </div>
-            <Logout />
           </Card.Header>
 
           <Card.Body className="p-4">
@@ -156,6 +156,7 @@ function SpecificLoan() {
         </Card>
       </Container>
     </div>
+      </>
   );
 }
 

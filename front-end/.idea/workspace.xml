@@ -5,30 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b550dc4b-c27b-45f3-8fd6-d591bf66fe35" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/about-us-hero-desktop.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/op_95th-antioch01.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../back-end/.gradle/8.10.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/.gradle/8.10.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../back-end/.gradle/8.10.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/.gradle/8.10.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../back-end/.gradle/8.10.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/.gradle/8.10.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../back-end/.gradle/8.10.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/.gradle/8.10.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../back-end/.gradle/8.10.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/.gradle/8.10.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../back-end/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../back-end/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../back-end/build/classes/java/main/com/example/lrpt/controller/AccountController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/build/classes/java/main/com/example/lrpt/controller/AccountController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../back-end/build/classes/java/main/com/example/lrpt/controller/LoanController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/build/classes/java/main/com/example/lrpt/controller/LoanController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../back-end/build/classes/java/main/com/example/lrpt/service/AccountService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/build/classes/java/main/com/example/lrpt/service/AccountService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../back-end/build/classes/java/main/com/example/lrpt/service/LoanService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/build/classes/java/main/com/example/lrpt/service/LoanService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../back-end/build/tmp/compileJava/compileTransaction/stash-dir/LoanController.class.uniqueId0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../back-end/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../back-end/data/db.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/data/db.mv.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../back-end/data/db.mv.db" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pages/AdminDash.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/AdminDash.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/LoanCreator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/LoanCreator.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pages/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/SpecificLoan.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/SpecificLoan.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Customer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Customer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/SpecificLoan.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SpecificLoan.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -230,6 +216,37 @@
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/main" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/Steven-Back" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
