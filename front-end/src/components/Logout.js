@@ -10,7 +10,7 @@ function Logout() {
   };
 
   return (
-    <Button variant="outline-danger" onClick={handleLogout}>
+    <Button variant="outline-danger" onClick={handleLogout} className="justify-content-end">
       Logout
     </Button>
   );
