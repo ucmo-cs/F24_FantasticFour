@@ -24,6 +24,7 @@ public class Account {
 
     private Boolean user_type;
     private String userName;
+    private String firstName;
     private String password;
     private String email;
     private String phoneNumber;
