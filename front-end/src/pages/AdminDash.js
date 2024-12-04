@@ -41,11 +41,12 @@ function AdminDash() {
         <Header />
     <div style={{ 
       minHeight: '100vh',
-
+      backgroundColor: 'indianred',
       padding: '2rem'
     }}>
       <Container 
         className="d-flex justify-content-center"
+        
         style={{
           
           maxWidth: '1400px',

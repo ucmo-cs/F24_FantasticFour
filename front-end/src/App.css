@@ -17,7 +17,7 @@ body, html {
 .card {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 2rem;
-  /*background-color: white; /* If you want the card to have a white background */
+  background-color: white; /* If you want the card to have a white background */
 }
 
 .table-responsive {
