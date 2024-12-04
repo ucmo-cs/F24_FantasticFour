@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Form, Button, Container, Row, Col, Card, Table } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import Logout from '../components/Logout';
+import Header from "../components/Header";
 
 function LoanCreator() {
   const [accounts, setAccounts] = useState([]);
@@ -97,10 +98,11 @@ function LoanCreator() {
   };
 
   return (
+      <>
+      <Header />
     <Container className="mt-4">
       <div className="d-flex justify-content-between align-items-center mb-4">
         <h2>Create New Loan</h2>
-        <Logout />
       </div>
       
       {error && <div className="alert alert-danger">{error}</div>}
@@ -259,6 +261,7 @@ function LoanCreator() {
         </div>
       </Form>
     </Container>
+      </>
   );
 }
 
